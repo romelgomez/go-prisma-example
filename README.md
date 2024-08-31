@@ -1,4 +1,4 @@
-# Complex Server Example
+# Go Prisma Example
 
 `go run main.go`
 
