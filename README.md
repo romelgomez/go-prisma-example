@@ -9,6 +9,7 @@
 ```bash
 go get github.com/steebchen/prisma-client-go
 go get github.com/rs/zerolog/log
+go get github.com/julienschmidt/httprouter
 ```
 
 ## Generate the prisma lib

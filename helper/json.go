@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func ReadRequest(r *http.Request, result interface{}) {
+func ReadRequestBody(r *http.Request, result interface{}) {
 	decoder := json.NewDecoder(r.Body)
 	err := decoder.Decode(result)
 	ErrorPanic(err)

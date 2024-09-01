@@ -1,6 +1,13 @@
 package repository
 
-import "go-prisma-example/prisma/db"
+import (
+	"context"
+	"errors"
+	"fmt"
+	"go-prisma-example/helper"
+	"go-prisma-example/model"
+	"go-prisma-example/prisma/db"
+)
 
 type PostRepositoryImpl struct {
 	Db *db.PrismaClient
@@ -25,7 +32,7 @@ func (p *PostRepositoryImpl) FindAll(ctx context.Context) []model.Post {
 	var posts []model.Post
 
 	for _, post := range allPost {
-		published, _ := post.Published()
+		published := post.Published
 		description, _ := post.Description()
 
 		postData := model.Post{
@@ -43,11 +50,24 @@ func (p *PostRepositoryImpl) FindAll(ctx context.Context) []model.Post {
 
 // FindById implements PostRepository.
 func (p *PostRepositoryImpl) FindById(ctx context.Context, postId string) (model.Post, error) {
+	// Attempt to find the post by ID
 	post, err := p.Db.Post.FindFirst(db.Post.ID.Equals(postId)).Exec(ctx)
-	helper.ErrorPanic(err)
+	if err != nil {
+		// Return an error if the query fails
+		return model.Post{}, err
+	}
 
-	published, _ := post.Published()
+	// Check if post is nil to avoid a nil pointer dereference
+	if post == nil {
+		// Return an error indicating that the post was not found
+		return model.Post{}, errors.New("post id not found")
+	}
+
+	// Safely access post fields and methods after confirming post is not nil
+	published := post.Published
 	description, _ := post.Description()
+
+	// Create and return the Post model
 	postData := model.Post{
 		Id:          post.ID,
 		Title:       post.Title,
@@ -55,11 +75,7 @@ func (p *PostRepositoryImpl) FindById(ctx context.Context, postId string) (model
 		Description: description,
 	}
 
-	if post != nil {
-		return postData, nil
-	} else {
-		return postData, errors.New("Post id not found")
-	}
+	return postData, nil
 }
 
 // Save implements PostRepository.
