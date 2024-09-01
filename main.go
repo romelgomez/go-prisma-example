@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/joho/godotenv"
+	"go-prisma-example/config"
+	"go-prisma-example/helper"
 	"log"
 	"net/http"
 	"os"
@@ -25,6 +27,11 @@ func main() {
 	if port == "" {
 		port = "8080" // Default to port 8080 if not specified
 	}
+
+	db, err := config.ConnectDB()
+	helper.ErrorPanic(err)
+
+	defer db.Prisma.Disconnect()
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", helloHandler)
