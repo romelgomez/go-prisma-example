@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"go-prisma-example/data/request"
-	"go-prisma-example/data/response"
+	"go-chevere/data/request"
+	"go-chevere/data/response"
 )
 
 type PostService interface {

@@ -2,7 +2,7 @@ package config
 
 import (
 	"github.com/rs/zerolog/log"
-	"go-prisma-example/prisma/db"
+	"go-chevere/prisma/db"
 )
 
 func ConnectDB() (*db.PrismaClient, error) {

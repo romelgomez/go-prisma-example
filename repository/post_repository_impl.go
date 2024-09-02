@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"go-prisma-example/helper"
-	"go-prisma-example/model"
-	"go-prisma-example/prisma/db"
+	"go-chevere/helper"
+	"go-chevere/model"
+	"go-chevere/prisma/db"
 )
 
 type PostRepositoryImpl struct {

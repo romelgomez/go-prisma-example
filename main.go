@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"go-prisma-example/config"
-	"go-prisma-example/controller"
-	"go-prisma-example/helper"
-	"go-prisma-example/repository"
-	"go-prisma-example/router"
-	"go-prisma-example/service"
+	"go-chevere/config"
+	"go-chevere/controller"
+	"go-chevere/helper"
+	"go-chevere/repository"
+	"go-chevere/router"
+	"go-chevere/service"
 	"log"
 	"net/http"
 	"os"
