@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"go-chevere/data/request"
-	"go-chevere/data/response"
-	"go-chevere/helper"
-	"go-chevere/service"
+	"go-prisma-example/data/request"
+	"go-prisma-example/data/response"
+	"go-prisma-example/helper"
+	"go-prisma-example/service"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"

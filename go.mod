@@ -1,4 +1,4 @@
-module go-chevere
+module go-prisma-example
 
 go 1.23.0
 

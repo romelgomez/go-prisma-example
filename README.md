@@ -1,8 +1,8 @@
-# Go Chevere
+# Go Prisma Example
 
 `go run main.go`
 
-`go mod init go-chevere`
+`go mod init go-prisma-example`
 
 ## libs
 

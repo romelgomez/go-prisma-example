@@ -2,11 +2,11 @@ package service
 
 import (
 	"context"
-	"go-chevere/data/request"
-	"go-chevere/data/response"
-	"go-chevere/helper"
-	"go-chevere/model"
-	"go-chevere/repository"
+	"go-prisma-example/data/request"
+	"go-prisma-example/data/response"
+	"go-prisma-example/helper"
+	"go-prisma-example/model"
+	"go-prisma-example/repository"
 )
 
 type PostServiceImpl struct {

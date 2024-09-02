@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	"go-chevere/model"
+	"go-prisma-example/model"
 )
 
 type PostRepository interface {

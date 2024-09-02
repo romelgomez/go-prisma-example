@@ -2,7 +2,7 @@ package router
 
 import (
 	"fmt"
-	"go-chevere/controller"
+	"go-prisma-example/controller"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
