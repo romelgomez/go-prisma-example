@@ -1,0 +1,86 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "go-prisma",
+  "collectionId": "43c2b5d9-3269-4510-84c6-1bddcec3083d",
+  "dateExported": "2024-09-02T14:49:28.574Z",
+  "version": "1.2",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "b8e2ca60-4e1a-407e-8d84-42bc7a4fe451",
+      "colId": "43c2b5d9-3269-4510-84c6-1bddcec3083d",
+      "containerId": "",
+      "name": "find all books",
+      "url": "localhost:3000/api/post/",
+      "method": "GET",
+      "sortNum": 5000,
+      "created": "2024-09-02T14:39:04.653Z",
+      "modified": "2024-09-02T14:39:57.569Z",
+      "headers": []
+    },
+    {
+      "_id": "82035f0f-23a7-4891-ab9a-aabc1f4cd8a7",
+      "colId": "43c2b5d9-3269-4510-84c6-1bddcec3083d",
+      "containerId": "",
+      "name": "new book",
+      "url": "localhost:3000/api/post",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2024-09-02T14:36:00.767Z",
+      "modified": "2024-09-02T14:43:44.460Z",
+      "headers": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\":\"to be delete - 009\",\n  \"published\": true,\n  \"description\": \"try\"\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "81fdd7f6-251e-418b-8705-d724167cf12a",
+      "colId": "43c2b5d9-3269-4510-84c6-1bddcec3083d",
+      "containerId": "",
+      "name": "update a book",
+      "url": "localhost:3000/api/post/429acecd-34c4-45c1-884c-c4de28479537",
+      "method": "PATCH",
+      "sortNum": 30000,
+      "created": "2024-09-02T14:40:15.860Z",
+      "modified": "2024-09-02T14:40:41.664Z",
+      "headers": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\":\"always is the same - 004\",\n  \"published\": true,\n  \"description\": \"try\"\n}",
+        "form": []
+      },
+      "preReq": {
+        "options": {
+          "skipRequest": true
+        }
+      }
+    },
+    {
+      "_id": "49581ae8-936c-4b53-8976-607904fdacff",
+      "colId": "43c2b5d9-3269-4510-84c6-1bddcec3083d",
+      "containerId": "",
+      "name": "delete a book",
+      "url": "localhost:3000/api/post/63a305ff-7003-4756-87b4-ff7f2bcd7b61",
+      "method": "DELETE",
+      "sortNum": 40000,
+      "created": "2024-09-02T14:41:57.544Z",
+      "modified": "2024-09-02T14:42:21.413Z",
+      "headers": []
+    },
+    {
+      "_id": "da605207-2a45-447a-af9b-e429c627b70e",
+      "colId": "43c2b5d9-3269-4510-84c6-1bddcec3083d",
+      "containerId": "",
+      "name": "find a book",
+      "url": "localhost:3000/api/post/f673f3f9-50b9-4e1e-9655-8429050fd73b",
+      "method": "GET",
+      "sortNum": 50000,
+      "created": "2024-09-02T14:42:54.936Z",
+      "modified": "2024-09-02T14:43:23.469Z",
+      "headers": []
+    }
+  ],
+  "ref": "bAGaN0VibW0ryv9UZyreN4ZGcgGjLKbOA9VGo8NtpaUNBeHtDxP_7_YOPtaIO5MTuqa2RAePVaRKR8fDuOUg3Q"
+}
