@@ -2,18 +2,23 @@ package main
 
 import (
 	"fmt"
-	"github.com/joho/godotenv"
 	"go-prisma-example/config"
+	"go-prisma-example/controller"
 	"go-prisma-example/helper"
+	"go-prisma-example/repository"
+	"go-prisma-example/router"
+	"go-prisma-example/service"
 	"log"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome to the Go Server!")
-}
+// func helloHandler(w http.ResponseWriter, r *http.Request) {
+// 	fmt.Fprintf(w, "Welcome to the Go Server!")
+// }
 
 func main() {
 	fmt.Println("Start Server")
@@ -33,12 +38,24 @@ func main() {
 
 	defer db.Prisma.Disconnect()
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", helloHandler)
+	// repository
+	postRepository := repository.NewPostRepository(db)
+
+	// service
+	postService := service.NewPostServiceImpl(postRepository)
+
+	// controller
+	postController := controller.NewPostController(postService)
+
+	// router
+	routes := router.NewRouter(postController)
+
+	// mux := http.NewServeMux()
+	// mux.HandleFunc("/", helloHandler)
 
 	server := &http.Server{
 		Addr:           ":" + port,
-		Handler:        mux,
+		Handler:        routes,
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,
 		MaxHeaderBytes: 1 << 20,

@@ -14,7 +14,7 @@ type PostController struct {
 	PostService service.PostService
 }
 
-func NewPostServiceController(postService service.PostService) *PostController {
+func NewPostController(postService service.PostService) *PostController {
 	return &PostController{PostService: postService}
 }
 
